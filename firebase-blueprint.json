@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user profile.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": ["email", "createdAt"]
+    },
+    "Chat": {
+      "title": "Chat",
+      "description": "A user's chat or query history.",
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "answer": {
+          "type": "string",
+          "maxLength": 50000
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      },
+      "required": ["query", "answer", "language", "timestamp"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profiles."
+    },
+    "users/{userId}/chats/{chatId}": {
+      "schema": { "$ref": "#/entities/Chat" },
+      "description": "Chat history for a user."
+    }
+  }
+}

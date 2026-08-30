@@ -1,0 +1,10 @@
+{
+  "name": "Remix Goa Vibe RAG",
+  "description": "A voice-enabled RAG pipeline with a perfect Goa-vibe UI, latency analytics, and model guardrails.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
